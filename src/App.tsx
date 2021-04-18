@@ -5,11 +5,14 @@ import { useState } from "react";
 function App() {
   const [output, setOutput] = useState("");
   let vovels = /[aeıioöuü]/i;
-  var result: string[] = [];
 
   function handleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
+    var result: string[] = [];
     var text = e.target.value.split(" ");
-    text.map((t) => hyphenate(t));
+    console.log(text);
+    text.forEach((element) => {
+      hyphenate(element, result);
+    });
     setOutput(result.join(" | "));
   }
 
@@ -17,7 +20,7 @@ function App() {
     return vovels.test(value);
   }
 
-  function hyphenate(input: string) {
+  function hyphenate(input: string, result: string[]) {
     var syllables: string[] = [];
     var letters: string[] = [];
     var i = input.length - 1;
