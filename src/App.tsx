@@ -5,9 +5,12 @@ import { useState } from "react";
 function App() {
   const [output, setOutput] = useState("");
   let vovels = /[aeıioöuü]/i;
+  var result: string[] = [];
 
   function handleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
-    hyphenate(e.target.value);
+    var text = e.target.value.split(" ");
+    text.map((t) => hyphenate(t));
+    setOutput(result.join(" | "));
   }
 
   function isVowel(value: string) {
@@ -37,8 +40,7 @@ function App() {
         i--;
       }
     }
-    var result = syllables.reverse().join(" - ");
-    setOutput(result);
+    result.push(syllables.reverse().join(" - "));
   }
 
   return (
