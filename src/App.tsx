@@ -9,7 +9,6 @@ function App() {
   function handleChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
     var result: string[] = [];
     var text = e.target.value.split(" ");
-    console.log(text);
     text.forEach((element) => {
       hyphenate(element, result);
     });
