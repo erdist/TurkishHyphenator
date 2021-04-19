@@ -5,8 +5,8 @@ import { useState } from "react";
 function App() {
   const [output, setOutput] = useState("");
   const [syllableCount, setSyllableCount] = useState(0);
-  const vowels = /[aeıioöuü]/i;
-  const vowelsForCounting = /[aeıioöuü]/gi;
+  const vowels = /[aeıioöuüİ]/i;
+  const vowelsForCounting = /[aeıioöuüİ]/gi;
 
   function countSyllables(text: string) {
     var result = text.match(vowelsForCounting);
