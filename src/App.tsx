@@ -81,7 +81,7 @@ function App() {
         </Grid.Column>
       </Grid>
 
-      <Divider vertical>Turkish Hyphenator</Divider>
+      <Divider horizontal>Turkish Hyphenator</Divider>
     </div>
   );
 }
