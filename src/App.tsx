@@ -1,4 +1,3 @@
-import "./App.css";
 import { Divider, Form, Grid, Message } from "semantic-ui-react";
 import { useState } from "react";
 
@@ -59,21 +58,26 @@ function App() {
     <div>
       <Grid columns={2} relaxed="very" stackable>
         <Grid.Column width="8" stretched>
-          <Form widths="equal">
-            <Form.TextArea
-              width="16"
-              label="Your Text"
-              onChange={handleChange}
-              placeholder="Enter your text here..."
-            ></Form.TextArea>
-          </Form>
+          <Message>
+            <Message.Header>Your text</Message.Header>
+            <Form widths="equal">
+              <Form.TextArea
+                width="16"
+                onChange={handleChange}
+                placeholder="Enter your text here..."
+                style={{ minHeight: 100 }}
+              ></Form.TextArea>
+            </Form>
+          </Message>
         </Grid.Column>
 
         <Grid.Column width="8" stretched>
-          <Message.List>
+          <Message>
             <Message.Header>Syllable Count: {syllableCount}</Message.Header>
-            <p>{output}</p>
-          </Message.List>
+            <Message.Content style={{ fontFamily: "Arial" }}>
+              {output}
+            </Message.Content>
+          </Message>
         </Grid.Column>
       </Grid>
 
